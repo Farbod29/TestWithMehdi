@@ -24,7 +24,7 @@ class LoginController extends Controller
             'password' => 'required',
             // 'captcha' => 'required|captcha_api:'. request('key')
         ]);
-        $user=User::where("email",$data['email'])->with("reading_lists")->first();
+        $user=User::where("email",$data['email'])->first();
         if(!$user) return response()->json([
             'ok'=>false,
             'message'=>__("Wrong email or password")

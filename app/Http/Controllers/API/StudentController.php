@@ -29,7 +29,7 @@ class StudentController extends Controller
     {
         $data=$request->validate([
             'name'=>'required',
-            'familyName'=>'sometimes'
+            'nameFamily'=>'sometimes'
         ]);
         $student=Student::create($data);
         return $this->successResponse($student,__("Student created successfully"));
@@ -58,7 +58,7 @@ class StudentController extends Controller
     {
         $data=$request->validate([
             'name'=>'required',
-            'familyName'=>'sometimes'
+            'nameFamily'=>'sometimes'
         ]);
         $student->update($data);
         return $this->successResponse($student,__("Student updated successfully"));
